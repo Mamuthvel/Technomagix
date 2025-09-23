@@ -411,16 +411,11 @@
             <div class="row">
               <div class="col-lg-6">
                 <div class="input-area">
-                  <input type="text" placeholder="First Name" id="first_name">
+                  <input type="text" placeholder="Full Name" id="first_name">
                   <small class="error" id="error_first_name"></small>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="input-area">
-                  <input type="text" placeholder="Last Name" id="last_name">
-                  <small class="error" id="error_last_name"></small>
-                </div>
-              </div>
+              
               <div class="col-lg-6">
                 <div class="input-area">
                   <input type="email" placeholder="Email Address" id="email">
@@ -433,7 +428,7 @@
                   <small class="error" id="error_phone"></small>
                 </div>
               </div>
-              <div class="col-lg-12">
+              <div class="col-lg-6">
                 <div class="input-area">
                   <input type="text" placeholder="Subject">
                 </div>
@@ -480,18 +475,16 @@
     </div>
   </div><!--===== CTA AREA ENDS =======-->
 
-  <!--===== FOOTER AREA STARTS =======-->
+ <!--===== FOOTER AREA STARTS =======-->
   <div class="footer5-section-area">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6">
           <div class="footer-logo-area">
-            <img src="assets/img/all-images/logo-icon-black.png" alt="">
-
-            <p>Full-service digital solutions company specializing in Social Media Marketing (SMM), SEO, Web
-              Development, AI-powered Video & Flyer Ads, UI/UX Design, and Branding. We also provide expert IT staffing,
-              Google Ads/SEM, and Performance Marketing strategies to help businesses grow and succeed in the digital
-              world</p>
+            <img src="assets/img/all-images/footer-logo.png" alt="technomagix">
+            <p>Specializing in Social Media Marketing (SMM), SEO, Web Development, AI-powered Video & Flyer Ads, UI/UX
+              Design, and Branding. We also provide expert IT staffing, Google Ads/SEM, and Performance Marketing
+              strategies to help businesses grow and succeed in the digital world</p>
             <ul>
               <li><a href="https://www.facebook.com/share/1CWkkB3Lja/"><img src="assets/img/icons/facebook5.svg" alt="facebook"></a></li>
               <li><a href="https://www.instagram.com/technomagix_?igsh=b2ZjcDNrMnV2ZTNn"><img src="assets/img/icons/instagram5.png" alt="instagram"></a></li>
@@ -503,12 +496,12 @@
 
         <div class="col-lg-2 col-md-6">
           <div class="footer-logo-area1">
-            <h3>Who We are ? Link</h3>
+            <h3>Who we are ?</h3>
             <ul>
-              <li><a href="blog.html">Our Blog</a></li>
-              <li><a href="who-we-are.html">Who We are ?</a></li>
+              <li><a href="who-we-are.html">Who We Are?</a></li>
               <li><a href="social-media-marketing.html">Services</a></li>
               <li><a href="insights.html">Marketing</a></li>
+              <!-- <li><a href="testimonials.html">Testimonials</a></li> -->
               <li><a href="contact.html">Contact Us</a></li>
             </ul>
           </div>
@@ -519,15 +512,15 @@
             <h3>Get in touch</h3>
             <ul>
               <li><a href="mailto"><img src="assets/img/icons/email.svg"
-                    alt="email-logo"><span>technomagixlab@gmail.com</span></a></li>
-              <li><a href="#"><img src="assets/img/icons/location.svg" alt="location">
-                <span>
-                    RMC Campus, Mettukadai, Paravalasu, Pungampadi (post), Erode - 638112.</span></a></li>
-              <li><a href="tel:123-456-7890"><img src="assets/img/icons/phone.svg" alt=""><span>+91 91501 84423</span></a></li>
+                    alt=""><span>technomagixlab@gmail.com</span></a></li>
+              <li><a href="#"><img src="assets/img/icons/location.svg" alt=""><span>RMC Campus, Mettukadai,
+                    Paravalasu, Pungampadi (post), Erode - 638112.</span></a></li>
+              <li><a href="tel:+91 91501 84423"><img src="assets/img/icons/phone.svg" alt=""><span>+91
+                    91501 84423</span></a></li>
             </ul>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 custom-padding  ">
+        <div class="col-lg-4 col-md-6 custom-padding">
           <div class="footer-logo-area3">
             <h3>Subscribe Our Newsletter</h3>
             <form action="#">
@@ -554,6 +547,7 @@
       </div>
     </div>
   </div>
+  <div id="toast"></div>
   <!--===== FOOTER AREA ENDS =======-->
 
   <!--===== JS SCRIPT LINK =======-->
@@ -597,7 +591,7 @@
       clearErrors();
 
       var firstName = document.getElementById("first_name").value.trim();
-      var lastName = document.getElementById("last_name").value.trim();
+      // var lastName = document.getElementById("last_name").value.trim();
       var email = document.getElementById("email").value.trim();
       var phone = document.getElementById("phone_number").value.trim();
       var message = document.getElementById("message").value.trim();
@@ -606,7 +600,7 @@
 
       // Validation
       if (!firstName) {
-        document.getElementById("error_first_name").innerText = "First name is required";
+        document.getElementById("error_first_name").innerText = "Full name is required";
         isValid = false;
       }
       if (!phone) {
@@ -627,7 +621,7 @@
       if (!isValid) return;
 
       var params = {
-        from_name: firstName + " " + lastName,
+        from_name: firstName ,
         email: email,
         message: message,
         phone: phone
